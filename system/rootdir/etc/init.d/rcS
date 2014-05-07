@@ -1,0 +1,16 @@
+#!/bin/sh
+
+mkdir /proc
+mkdir /sys
+mkdir /tmp
+mkdir -p /mnt/sdcard
+mkdir /system
+
+mount -t proc  proc  /proc
+mount -t sysfs sysfs /sys
+mount -t tmpfs tmpfs /tmp
+
+echo "/sbin/mdev" > /proc/sys/kernel/hotplug
+mount -t tmpfs mdev /dev
+/sbin/mdev -s
+#/bin/usbd &

@@ -1,0 +1,45 @@
+# If you don't need to do a full clean build but would like to touch
+# a file or delete some intermediate files, add a clean step to the end
+# of the list.  These steps will only be run once, if they haven't been
+# run before.
+#
+# E.g.:
+#     $(call add-clean-step, touch -c external/sqlite/sqlite3.h)
+#     $(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/STATIC_LIBRARIES/libz_intermediates)
+#
+# Always use "touch -c" and "rm -f" or "rm -rf" to gracefully deal with
+# files that are missing or have been moved.
+#
+# Use $(PRODUCT_OUT) to get to the "out/target/product/blah/" directory.
+# Use $(OUT_DIR) to refer to the "out" directory.
+#
+# If you need to re-do something that's already mentioned, just copy
+# the command and add it to the bottom of the list.  E.g., if a change
+# that you made last week required touching a file and a change you
+# made today requires touching the same file, just copy the old
+# touch step and add it to the end of the list.
+#
+# ************************************************
+# NEWER CLEAN STEPS MUST BE AT THE END OF THE LIST
+# ************************************************
+
+# For example:
+#$(call add-clean-step, rm -rf $(PRODUCT_OUT)/data/*)
+
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system)
+
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/lib/*.so)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/lib/*.so)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/symbols/system/lib/*.so)
+
+$(call add-clean-step, rm -f $(OUT_DIR)/versions_checked.mk)
+
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/STATIC_LIBRARIES)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/SHARED_LIBRARIES)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/EXECUTABLES)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/obj/lib/*.o)
+
+
+# ************************************************
+# NEWER CLEAN STEPS MUST BE AT THE END OF THE LIST
+# ************************************************
