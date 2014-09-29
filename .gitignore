@@ -1,0 +1,76 @@
+#
+# Normal rules
+#
+.*
+*.o
+*.o.*
+*.a
+*.s
+*.ko
+*.so
+*.so.dbg
+*.mod.c
+*.i
+*.lst
+*.symtypes
+*.order
+modules.builtin
+*.elf
+*.bin
+*.gz
+*.bz2
+*.lzma
+*.xz
+*.lzo
+*.patch
+*.gcno
+
+#
+# KERNEL files
+#
+kernel/linux
+kernel/vmlinux
+kernel/vmlinuz
+kernel/System.map
+kernel/Module.markers
+kernel/Module.symvers
+#
+# Generated include files
+#
+kernel/include/config
+kernel/include/linux/version.h
+kernel/include/generated
+kernel/arch/*/include/generated
+
+#
+# TAGS files
+#
+tags
+.tags
+
+#
+# git files that we don't want to ignore even it they are dot-files
+#
+!.gitignore
+!.mailmap
+
+# stgit generated dirs
+patches-*
+
+# quilt's files
+patches
+series
+
+# cscope files
+cscope.*
+ncscope.*
+
+# gnu global files
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+
+*.orig
+*~
+\#*#
