@@ -252,10 +252,6 @@ include $(ONE_SHOT_MAKEFILE)
 # would have been with a normal make.
 CUSTOM_MODULES := $(sort $(call get-tagged-modules,$(ALL_MODULE_TAGS)))
 FULL_BUILD :=
-# Stub out the notice targets, which probably aren't defined
-# when using ONE_SHOT_MAKEFILE.
-NOTICE-HOST-%: ;
-NOTICE-TARGET-%: ;
 
 # A helper goal printing out install paths
 .PHONY: GET-INSTALL-PATH

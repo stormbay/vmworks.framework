@@ -322,9 +322,6 @@ INTERNAL_USERIMAGES_DEPS := $(MKYAFFS2)
 endif
 INTERNAL_USERIMAGES_BINARY_PATHS := $(sort $(dir $(INTERNAL_USERIMAGES_DEPS)))
 
-SELINUX_FC := $(TARGET_ROOT_OUT)/file_contexts
-INTERNAL_USERIMAGES_DEPS += $(SELINUX_FC)
-
 # $(1): the path of the output dictionary file
 # $(2): additional "key=value" pairs to append to the dictionary file.
 define generate-userimage-prop-dictionary
@@ -333,7 +330,6 @@ $(if $(BOARD_SYSTEMIMAGE_PARTITION_SIZE),$(hide) echo "system_size=$(BOARD_SYSTE
 $(if $(BOARD_USERDATAIMAGE_PARTITION_SIZE),$(hide) echo "userdata_size=$(BOARD_USERDATAIMAGE_PARTITION_SIZE)" >> $(1))
 $(if $(INTERNAL_USERIMAGES_SPARSE_EXT_FLAG),$(hide) echo "extfs_sparse_flag=$(INTERNAL_USERIMAGES_SPARSE_EXT_FLAG)" >> $(1))
 $(if $(mkyaffs2_extra_flags),$(hide) echo "mkyaffs2_extra_flags=$(mkyaffs2_extra_flags)" >> $(1))
-$(hide) echo "selinux_fc=$(SELINUX_FC)" >> $(1)
 $(if $(2),$(hide) $(foreach kv,$(2),echo "$(kv)" >> $(1);))
 endef
 
