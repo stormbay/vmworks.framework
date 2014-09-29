@@ -586,13 +586,13 @@ droidcore: files \
 # dist_files only for putting your library into the dist directory with a full build.
 .PHONY: dist_files
 
-$(call dist-for-goals, droidcore, \
-  $(SYMBOLS_ZIP) \
-  $(INSTALLED_FILES_FILE) \
-  $(INSTALLED_BUILD_PROP_TARGET) \
-  $(BUILT_TARGET_FILES_PACKAGE) \
-  $(INSTALLED_VMWORKS_INFO_TXT_TARGET) \
-  $(INSTALLED_RAMDISK_TARGET)
+$(call dist-for-goals, droidcore,		\
+  $(SYMBOLS_ZIP)						\
+  $(INSTALLED_FILES_FILE)				\
+  $(INSTALLED_BUILD_PROP_TARGET)		\
+  $(BUILT_TARGET_FILES_PACKAGE)			\
+  $(INSTALLED_VMWORKS_INFO_TXT_TARGET)	\
+  $(INSTALLED_RAMDISK_TARGET)			\
  )
 
 # Put a copy of the radio/bootloader files in the dist dir.

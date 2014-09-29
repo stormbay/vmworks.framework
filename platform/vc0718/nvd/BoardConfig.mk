@@ -6,3 +6,5 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 
+TARGET_KERNEL_CONFIG := vc0718_nvd_defconfig
+

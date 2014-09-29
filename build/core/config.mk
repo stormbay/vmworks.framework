@@ -175,7 +175,7 @@ TARGET_CPU_ABI2 := $(strip $(TARGET_CPU_ABI2))
 
 # $(1): os/arch
 define select-vmworks-config-h
-build/core/combo/include/arch/$(1)/vmWorksConfig.h
+$(VMWORKS_BUILD_TOP)/build/core/combo/include/arch/$(1)/vmWorksConfig.h
 endef
 
 combo_target := HOST_

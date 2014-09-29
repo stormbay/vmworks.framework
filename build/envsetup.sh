@@ -120,7 +120,9 @@ function setpaths()
     export VMWORKS_TOOLCHAIN_2ND_ARCH=
     local ARCH=$(get_build_var TARGET_ARCH)
     case $ARCH in
-        arm) toolchaindir=arm/arm-linux-androideabi-$targetgccversion/bin
+        arm) toolchaindir=arm/arm-none-linux-gnueabi-4.3.3/bin
+			 toolchaindir2=arm/arm-linux-androideabi-4.6/bin
+#			 toolchaindir2=arm/arm-linux-androideabi-4.8/bin
             ;;
         *)
             echo "Can't find toolchain for unknown architecture: $ARCH"
@@ -139,9 +141,8 @@ function setpaths()
     case $ARCH in
         arm)
             # Legacy toolchain configuration used for ARM kernel compilation
-            toolchaindir=arm/arm-none-linux-gnueabi-4.3.3/bin
-            if [ -d "$gccprebuiltdir/$toolchaindir" ]; then
-                 VMWORKS_KERNEL_TOOLCHAIN_PATH="$gccprebuiltdir/$toolchaindir"
+            if [ -d "$gccprebuiltdir/$toolchaindir2" ]; then
+                 VMWORKS_KERNEL_TOOLCHAIN_PATH="$gccprebuiltdir/$toolchaindir2"
                  export ARM_EABI_TOOLCHAIN=$VMWORKS_KERNEL_TOOLCHAIN_PATH
             fi
             ;;
