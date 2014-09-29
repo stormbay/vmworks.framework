@@ -42,6 +42,8 @@ kernel/include/linux/version.h
 kernel/include/generated
 kernel/arch/*/include/generated
 
+out/*
+
 #
 # TAGS files
 #
