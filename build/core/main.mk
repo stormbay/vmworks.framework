@@ -610,6 +610,8 @@ droid: droidcore dist_files
 
 .PHONY: clean
 clean:
+	@make -C $(KERNEL_SOURCE_PATH) distclean
+	@echo "Kernel build cleaned"
 	@rm -rf $(OUT_DIR)
 	@echo "Entire build directory removed."
 

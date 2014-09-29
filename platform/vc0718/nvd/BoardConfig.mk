@@ -6,5 +6,7 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 
+
+KERNEL_SOURCE_PATH   := $(VMWORKS_BUILD_TOP)/kernel
 TARGET_KERNEL_CONFIG := vc0718_nvd_defconfig
 

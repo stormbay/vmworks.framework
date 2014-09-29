@@ -9,7 +9,6 @@
 include $(BUILD_SYSTEM)/base_rules.mk
 #######################################
 
-my_ndk_version_root :=
 
 ##################################################
 # Compute the dependency of the shared libraries
