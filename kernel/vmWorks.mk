@@ -1,7 +1,12 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
-KERNEL_IMAGE := $(LOCAL_PATH)/arch/arm/boot/uImage
+KERNEL_IMAGE  := arch/arm/boot/uImage
+KERNEL_OUTPUT := $(LOCAL_PATH)/$(KERNEL_IMAGE)
+
+$(KERNEL_OUTPUT)::
+	make -C $(KERNEL_SOURCE_PATH) $(TARGET_KERNEL_CONFIG)
+	make -C $(KERNEL_SOURCE_PATH) uImage
 
 
 LOCAL_MODULE := kernel.bin
@@ -10,16 +15,4 @@ LOCAL_MODULE_CLASS := PREBUILT
 LOCAL_MODULE_PATH := $(PRODUCT_OUT)
 LOCAL_SRC_FILES := $(KERNEL_IMAGE)
 #include $(BUILD_PREBUILT)
-
-
-#$(KERNEL_IMAGE)::
-#	make -C $(KERNEL_SOURCE_PATH) $(TARGET_KERNEL_CONFIG)
-#	make -C $(KERNEL_SOURCE_PATH) uImage
-
-KERNEL_INTERMEDIATES := $(local-intermediates-dir)/kernel.bin
-#$(KERNEL_INTERMEDIATES): $(KERNEL_IMAGE)
-#	$(copy-file-to-target-with-cp)
-
-#.PHONY: KERNEL_OBJ
-#KERNEL_OBJ: $(KERNEL_INTERMEDIATES)
 

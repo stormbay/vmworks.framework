@@ -102,7 +102,6 @@ endif
 
 endif  # LOCAL_STRIP_MODULE not true
 
-ifneq ($(filter APPS,$(LOCAL_MODULE_CLASS)),)
 ifneq ($(LOCAL_PREBUILT_STRIP_COMMENTS),)
 $(built_module) : $(my_prebuilt_src_file)
 	$(transform-prebuilt-to-target-strip-comments)
@@ -117,7 +116,6 @@ ifneq ($(prebuilt_module_is_a_library),)
   endif
 endif
 endif
-endif # LOCAL_MODULE_CLASS != APPS
 
 $(built_module) : $(LOCAL_ADDITIONAL_DEPENDENCIES)
 

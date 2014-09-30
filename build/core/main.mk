@@ -610,6 +610,8 @@ droid: droidcore dist_files
 
 .PHONY: clean
 clean:
+	@make -C $(BUSYBOX_SOURCE_PATH) distclean
+	@echo "Busybox build cleaned"
 	@make -C $(KERNEL_SOURCE_PATH) distclean
 	@echo "Kernel build cleaned"
 	@rm -rf $(OUT_DIR)

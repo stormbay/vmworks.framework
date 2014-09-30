@@ -8,3 +8,6 @@ PRODUCT_PROPERTY_OVERRIDES +=
 
 PRODUCT_ROOT_SOURCE := $(VMWORKS_BUILD_TOP)/system/core/rootdir
 
+BUSYBOX_SOURCE_PATH := $(VMWORKS_BUILD_TOP)/external/busybox
+BUSYBOX_CONFIG      := vmc_vc0718_defconfig
+

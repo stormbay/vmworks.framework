@@ -42,6 +42,13 @@ kernel/include/linux/version.h
 kernel/include/generated
 kernel/arch/*/include/generated
 
+external/busybox/busybox
+external/busybox/busybox.links
+external/busybox/busybox_unstripped
+external/busybox/busybox_unstripped.map
+external/busybox/busybox_unstripped.out
+external/busybox/_install/*
+
 out/*
 
 #
