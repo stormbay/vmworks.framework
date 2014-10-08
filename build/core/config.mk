@@ -29,7 +29,8 @@ SRC_DOCS:=
 # TODO: Enforce some kind of layering; only add include paths
 #       when a module links against a particular library.
 # TODO: See if we can remove most of these from the global list.
-SRC_HEADERS := 
+SRC_HEADERS :=	\
+	$(TOPDIR)system/core/include
 SRC_HOST_HEADERS:=
 SRC_LIBRARIES:=
 SRC_SERVERS:= 
