@@ -14,6 +14,7 @@
 #define _LINUX_CAPABILITY_VERSION_3 0x20080522
 #define _LINUX_CAPABILITY_U32S_3 2
 
+#if 0
 typedef struct __user_cap_header_struct {
  __u32 version;
  int pid;
@@ -24,6 +25,7 @@ typedef struct __user_cap_data_struct {
  __u32 permitted;
  __u32 inheritable;
 } __user *cap_user_data_t;
+#endif
 
 #define VFS_CAP_REVISION_MASK 0xFF000000
 #define VFS_CAP_REVISION_SHIFT 24
